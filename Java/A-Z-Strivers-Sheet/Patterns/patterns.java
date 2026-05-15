@@ -217,16 +217,15 @@ public class patterns {
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
             }
-            char ch ='A';
-            int breakPoint = (2*i+1)/2;
+            char ch = 'A';
+            int breakPoint = (2 * i + 1) / 2;
             for (int j = 0; j < 2 * i + 1; j++) {
                 System.out.print(ch);
-                if(j<breakPoint){
+                if (j < breakPoint) {
                     ch++;
                 } else {
                     ch--;
                 }
-            
             }
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
@@ -235,6 +234,106 @@ public class patterns {
         }
     }
 
+    public static void pattern18(int n) {
+        char end = (char) ('A' + n - 1);
+        for (int i = 0; i < n; i++) {
+            char start = (char) (end - i);
+            for (char ch = start; ch <= end; ch++) {
+                System.out.print(ch + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void pattern19(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < 2 * i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < 2 * i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void pattern20(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (j <= i) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            for (int j = n; j >= 1; j--) {
+                if (j > i) {
+                    System.out.print(" ");
+                } else {
+                    System.out.print("*");
+                }
+            }
+            System.out.println();
+        }
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = 1; j <= n; j++) {
+                if (j <= i) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            for (int j = n; j >= 1; j--) {
+                if (j > i) {
+                    System.out.print(" ");
+                } else {
+                    System.out.print("*");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void pattern21(int n){
+        for(int i = 0 ; i<=n ; i++){
+            for(int j = 0 ; j<=n ; j++){
+                if(i==0 || i==n || j==0 || j==n){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    public static void pattern22(int n){
+        for(int i = 0 ; i<2*n-1 ; i++){
+            for(int j = 0 ; j<2*n-1 ; j++){
+                int top = i;
+                int left = j;
+                int right = (2*n-2) - j;
+                int bottom = (2*n-2) - i;
+                int min = n-Math.min(Math.min(top, bottom), Math.min(left, right));
+                System.out.print((min) + " ");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
         int n = 5;
         // pattern1(n);
@@ -252,6 +351,11 @@ public class patterns {
         // pattern13(n);
         // pattern14(n);
         // pattern16(n);
-        pattern17(n);
+        // pattern17(n);
+        // pattern18(n);
+        // pattern19(n);
+        // pattern20(n);
+        // pattern21(n);
+        pattern22(n);
     }
 }
