@@ -63,6 +63,36 @@ public class sortingII {
 		return i + 1;
 	}
 
+	private static void interpolationSort(int[] arr) {
+		if (arr == null || arr.length <= 1) {
+			return;
+		}
+
+		int min = arr[0];
+		int max = arr[0];
+		for (int value : arr) {
+			if (value < min) {
+				min = value;
+			}
+			if (value > max) {
+				max = value;
+			}
+		}
+
+		int range = max - min + 1;
+		int[] count = new int[range];
+		for (int value : arr) {
+			count[value - min]++;
+		}
+
+		int index = 0;
+		for (int i = 0; i < count.length; i++) {
+			while (count[i]-- > 0) {
+				arr[index++] = i + min;
+			}
+		}
+	}
+
 	private static void swap(int[] arr, int i, int j) {
 		int temp = arr[i];
 		arr[i] = arr[j];
@@ -82,18 +112,24 @@ public class sortingII {
 	public static void main(String[] args) {
 		int[] arr = {5, 2, 9, 1, 6, 3};
 		int[] quickArr = {5, 2, 9, 1, 6, 3};
+		int[] interpolationArr = {5, 2, 9, 1, 6, 3};
 
 		System.out.println("Before sorting:");
 		printArray(arr);
 		printArray(quickArr);
+		printArray(interpolationArr);
 
 		mergeSort(arr, 0, arr.length - 1);
 		quickSort(quickArr, 0, quickArr.length - 1);
+		interpolationSort(interpolationArr);
 
 		System.out.println("After merge sort:");
 		printArray(arr);
 
 		System.out.println("After quick sort:");
 		printArray(quickArr);
+
+		System.out.println("After interpolation sort:");
+		printArray(interpolationArr);
 	}
 }
