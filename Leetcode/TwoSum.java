@@ -1,4 +1,5 @@
 package Leetcode;
+//Leetcode 1. Two Sum
 //Brute Force Solution
 public class TwoSum {
 
