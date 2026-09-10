@@ -1,3 +1,5 @@
+package Leetcode;
+
 public class ConcatenationOfArray {
 //Leetcode 1929. Concatenation of Array
 // Time Complexity: O(n) space Complexity: O(n) space

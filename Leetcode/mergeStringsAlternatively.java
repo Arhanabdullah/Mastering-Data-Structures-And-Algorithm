@@ -1,3 +1,5 @@
+package Leetcode;
+
 public class mergeStringsAlternatively {
 // Leetcode 1768. Merge Strings Alternately
 // Time Complexity: O(n) space Complexity: O(n) space

@@ -1,3 +1,5 @@
+package Leetcode;
+
 public class checkDivisiblity {
 
     // leetcode 3622. Check divisibility by Digit sum and product

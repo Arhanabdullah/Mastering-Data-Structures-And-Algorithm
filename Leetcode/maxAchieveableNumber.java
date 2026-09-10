@@ -1,3 +1,5 @@
+package Leetcode;
+
 public class maxAchieveableNumber {
 //Leetcode 2769. Find the Maximum Achievable Number
 // Time Complexity: O(1) space Complexity: O(1) space

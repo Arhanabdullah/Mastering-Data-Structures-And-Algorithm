@@ -1,3 +1,5 @@
+package Leetcode;
+
 public class CountCommas {
 //Leetcode 3870. Count Commas in Range
 // Time Complexity: O(1) space Complexity: O(1) space
