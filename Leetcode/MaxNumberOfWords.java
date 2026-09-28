@@ -14,4 +14,18 @@ public class MaxNumberOfWords {
         }
         return max;
     }
+    class Solution {
+        //Time Complexity: O(n*m), where n is the number of sentences and m is the average number of words in each sentence.
+        //Space Complexity: O(1)
+        //Optimal solution
+    public int mostWordsFound(String[] sentences) {
+        int max = 0;
+        for (String sentence : sentences) {
+            int count = sentence.replaceAll("\\S", "").length() +1;
+            if (count > max)
+                max = count;
+        }
+        return max;
+    }
+}
 }
